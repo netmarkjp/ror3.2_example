@@ -10,6 +10,7 @@ Startup Instruction
  # preflight settings
  # 
  # notice: confirm `which rails` point to ~/.rbenv/versions/<VERSION>/bin/gem
+ #         if not, execute `export PATH=~/.rbenv/versions/<VERSION>/bin:$PATH`
  gem install rails
 
  # ror startup
@@ -18,8 +19,22 @@ Startup Instruction
  rails server
 
  # generate model
- rails generate scaffold post id:long name:string body:string
+ rails generate scaffold post author:string body:text
  rake db:migrate
+
+ # ready to access http://localhost:3000/posts
+
+Apply Twitter Bootstrap
+------------------------------
+.. code:: bash
+
+ # edit Gemfile
+ # add to line 21, 
+ #   gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
+ bundle install
+ rails generate bootstrap:install 
+
+
 
 
 vim: set filetype=rst :
