@@ -1,0 +1,25 @@
+
+Startup Instruction
+------------------------------
+.. code:: bash
+
+ # preflight settings for Mac
+ # 
+ # install rbenv ruby-build with brew
+
+ # preflight settings
+ # 
+ # notice: confirm `which rails` point to ~/.rbenv/versions/<VERSION>/bin/gem
+ gem install rails
+
+ # ror startup
+ rails new ror3.2_example
+ cd ror3.2_example
+ rails server
+
+ # generate model
+ rails generate scaffold post id:long name:string body:string
+ rake db:migrate
+
+
+vim: set filetype=rst :
